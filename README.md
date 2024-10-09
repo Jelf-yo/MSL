@@ -181,7 +181,7 @@ rate = 30
 
 *stress_rate.ini*
 
-# 压测频率,默认十万
+#压测频率,默认十万
 [stress_test]
 rate = 100000
 
