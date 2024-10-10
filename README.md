@@ -38,6 +38,7 @@
 
 使用示例
 
+***ps:使用前请chmod +x makeSomeLogs***
  
 	./makeSomeLogs --template samples/testlog.sample --config samples/testlog.conf --output output/stress.log --rate_config samples/rate_config.ini &
 
