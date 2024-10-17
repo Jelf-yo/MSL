@@ -181,8 +181,9 @@ rate = 30
 压测建议可以直接用自带的示例日志，压测模式旨在根据当前配置性能尽可能快速地产生日志，所以不设有时间，压测模式需要结合--stress_test和--stress_rate两个参数使用，使用--stress_test不需要配置值。
 
 *stress_rate.ini*
-
+```
 #压测频率,默认十万
 [stress_test]
 rate = 100000
+```
 
