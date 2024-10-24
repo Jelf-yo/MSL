@@ -1,5 +1,11 @@
 # MSL  *MakeSomeLogs(整点日志)*
 
+# ***Update***
+
+2024/10/24
+- [x] 日志模板支持多条日志
+- [x] random支持数字范围
+- [x] 修正random的处理逻辑
 
 本程序用于模拟生成各类日志。
 		
@@ -61,11 +67,16 @@
 
 ## **日志模板&日志配置文件**
 
-一种日志模板搭配一个日志配置文件，其中的##token##为一个token，每一个token一一对应
+一种日志模板搭配一个日志配置文件，其中的##token##为一个token，每一个token一一对应，支持多条日志。
 
 **testlog.sample**
 
 	<1>##timestamp## ##src_ip## ##src_port## This just for test.
+或者
+
+ 	<1>##timestamp## ##src_ip## ##src_port## This just for test.
+  	<1>##timestamp## ##src_ip## ##src_port## This just for test.
+   	………………
 
  **testlog.conf**
 
@@ -91,7 +102,7 @@
  
  	- *2.file，文件类型常用于指定IP池、用户名等；*
  
- 	- *3.random，一个列表的随机字符串，多用于简单替换；*
+ 	- *3.random，一个列表的随机字符串，多用于简单替换；以及随机数字范围*
  
  	- *4.static，静态值，一个固定值；*
  
@@ -104,7 +115,7 @@
   
   	- *2.file,即为路径可以是相对路径也可以是绝对路径*
    
- 	- *3.random，一个列表的随机字符串，list["abc","bcd"]；*
+ 	- *3.random，一个列表的随机字符串，list["abc","bcd"]；随机数字范围如，900-10000,则会在900到10000随机生成一个整数，连接符为【-】，多用于端口*
  
  	- *4.static，静态值，一个固定值；*
  
