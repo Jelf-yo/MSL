@@ -46,7 +46,7 @@
 
 ***ps:使用前请chmod +x makeSomeLogs***
  
-	exec ./makeSomeLogs --template samples/testlog.sample --config samples/testlog.conf --output output/stress.log --rate_config samples/rate_config.ini &
+	./makeSomeLogs --template samples/testlog.sample --config samples/testlog.conf --output output/stress.log --rate_config samples/rate_config.ini &
 
  主程序为[makeSomeLogs],目前有下面几种参数(./makeSomeLogs -h可查看)。运行日志会生成落在logs/下
 
