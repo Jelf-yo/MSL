@@ -1,6 +1,11 @@
 # MSL  *MakeSomeLogs(整点日志)*
 
 # ***Update***
+2024/10/31更新
+
+- [x] 测试压测极限
+- [x] 优化压测运算逻辑
+- [x] 优化压测运行命令，增加绑定核心参数
 
 2024/10/24
 - [x] 日志模板支持多条日志
@@ -187,14 +192,9 @@ rate = 30
 
 ### 压测模式
 
-	./makeSomeLogs --template samples/testlog.sample --config samples/testlog.conf --output output/stress.log --rate_config samples/rate_config.ini --stress_test --stress_rate samples/stress_rate.ini &
+	./makeSomeLogs --template samples/testlog.sample --config samples/testlog.conf --output output/stress.log --rate_config samples/rate_config.ini --stress_test --cpu_core 7 & 
 
 压测建议可以直接用自带的示例日志，压测模式旨在根据当前配置性能尽可能快速地产生日志，所以不设有时间，压测模式需要结合--stress_test和--stress_rate两个参数使用，使用--stress_test不需要配置值。
 
-*stress_rate.ini*
-```
-#压测频率,默认十万
-[stress_test]
-rate = 100000
-```
+--cpu_core为绑定核心数，因为python默认最多跑满一个核心，目前单核心eps平均在18000以上，视硬盘io情况eps会更高。
 
